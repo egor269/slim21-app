@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slim 21 - Марафон стройности</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .scales {
+            font-size: 5rem;
+            margin: 30px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .motivation {
+            background: rgba(255,255,255,0.95);
+            padding: 40px;
+            border-radius: 25px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .motivation h3 {
+            font-size: 2.2rem;
+            color: #c44569;
+            margin-bottom: 20px;
+        }
+
+        .motivation p {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .motivation .highlight {
+            color: #ff6b9d;
+            font-weight: bold;
+        }
+
+        .videos-section {
+            background: rgba(255,255,255,0.95);
+            padding: 50px;
+            border-radius: 25px;
+            margin: 40px 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .videos-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #c44569;
+            margin-bottom: 40px;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .video-card h3 {
+            color: #c44569;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .video-frame {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 15px;
+            background: #f8f9fa;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 25px 50px;
+            text-decoration: none;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .join-text {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header h2 {
+                font-size: 1.3rem;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .motivation, .videos-section {
+                padding: 25px;
+            }
+            
+            .video-frame {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Slim 21</h1>
+            <h2>Марафон стройности</h2>
+            <div class="scales">⚖️</div>
+        </div>
+
+        <div class="motivation">
+            <h3>Измени свое тело, измени свою жизнь</h3>
+            <p><span class="highlight">До -10 кг за 21 день</span> с поддержкой профессионалов</p>
+            <p>Присоединяйся к групповому марафону</p>
+        </div>
+
+        <div class="videos-section">
+            <h2 class="videos-title">Видео тренировки</h2>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <h3>Тренировка 1</h3>
+                    <iframe class="video-frame" 
+                            src="https://rutube.ru/play/embed/5824c960f6679b9a04a382c4445317af?p=R9pTNRb3BXNaXyiN7yc1Lg" 
+                            frameborder="0" 
+                            allow="clipboard-write; autoplay" 
+                            webkitAllowFullScreen 
+                            mozallowfullscreen 
+                            allowFullScreen>
+                    </iframe>
+                </div>
+                
+                <div class="video-card">
+                    <h3>Тренировка 2</h3>
+                    <iframe class="video-frame" 
+                            src="https://rutube.ru/play/embed/1e124b23e756a907438419d6314bfe72?p=WffIrv_6viwHG7UH4Nkyqg" 
+                            frameborder="0" 
+                            allow="clipboard-write; autoplay" 
+                            webkitAllowFullScreen 
+                            mozallowfullscreen 
+                            allowFullScreen>
+                    </iframe>
+                </div>
+                
+                <div class="video-card">
+                    <h3>Тренировка 3</h3>
+                    <iframe class="video-frame" 
+                            src="https://rutube.ru/play/embed/e8c6711534d087dae88b9b1c699460a7?p=3vfNEp6l0_BmBvpnrLH2IQ" 
+                            frameborder="0" 
+                            allow="clipboard-write; autoplay" 
+                            webkitAllowFullScreen 
+                            mozallowfullscreen 
+                            allowFullScreen>
+                    </iframe>
+                </div>
+                
+                <div class="video-card">
+                    <h3>Тренировка 4</h3>
+                    <iframe class="video-frame" 
+                            src="https://rutube.ru/play/embed/f91be67d46754b820b3b63a73a245a45?p=HW7J8RI1MEemqyqGXcVp_w" 
+                            frameborder="0" 
+                            allow="clipboard-write; autoplay" 
+                            webkitAllowFullScreen 
+                            mozallowfullscreen 
+                            allowFullScreen>
+                    </iframe>
+                </div>
+                
+                <div class="video-card">
+                    <h3>Тренировка 5</h3>
+                    <iframe class="video-frame" 
+                            src="https://rutube.ru/play/embed/32c8d90a2846a71b00344df22e039ac2?p=zBwMnkHdD536XRDzDEQAbA" 
+                            frameborder="0" 
+                            allow="clipboard-write; autoplay" 
+                            webkitAllowFullScreen 
+                            mozallowfullscreen 
+                            allowFullScreen>
+                    </iframe>
+                </div>
+                
+                <div class="video-card">
+                    <h3>Тренировка 6</h3>
+                    <iframe class="video-frame" 
+                            src="https://rutube.ru/play/embed/1e124b23e756a907438419d6314bfe72?p=WffIrv_6viwHG7UH4Nkyqg" 
+                            frameborder="0" 
+                            allow="clipboard-write; autoplay" 
+                            webkitAllowFullScreen 
+                            mozallowfullscreen 
+                            allowFullScreen>
+                    </iframe>
+                </div>
+                
+                <div class="video-card">
+                    <h3>Тренировка 7</h3>
+                    <iframe class="video-frame" 
+                            src="https://rutube.ru/play/embed/e8c6711534d087dae88b9b1c699460a7?p=3vfNEp6l0_BmBvpnrLH2IQ" 
+                            frameborder="0" 
+                            allow="clipboard-write; autoplay" 
+                            webkitAllowFullScreen 
+                            mozallowfullscreen 
+                            allowFullScreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <p class="join-text">Готовы начать трансформацию?</p>
+            <a href="https://t.me/manager_alexsandra" class="cta-button">Начать путь к стройности</a>
+        </div>
+    </div>
+</body>
+</html>
